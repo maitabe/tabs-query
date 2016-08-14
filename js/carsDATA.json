@@ -1,0 +1,58 @@
+{
+  "Suzuki": [
+    {
+      "model": "Jimny",
+      "image": "img/Jimny_Phoenix_Red.png"
+    },
+    {
+      "model": "SX4 S-cross",
+      "image": "img/SX4_S-cross.jpg"
+    },
+    {
+      "model": "Vitara",
+      "image": "img/Vitara.jpg"
+    }
+  ],
+  "Mazda": [
+    {
+      "model": "Active 3",
+      "image": "img/Active3.jpg"
+    },
+    {
+      "model": "CX3",
+      "image": "img/CX3.jpg"
+    },
+    {
+      "model": "MX-5",
+      "image": "img/MX-5.jpg"
+    }
+  ],
+  "Hyundai": [
+    {
+      "model": "Accent",
+      "image": "img/Accent.jpg"
+    },
+    {
+      "model": "Tucson",
+      "image": "img/Tucson.jpg"
+    },
+    {
+      "model": "i20",
+      "image": "img/i20.jpg"
+    }
+  ],
+  "BMW": [
+    {
+      "model": "Mini cooper",
+      "image": "img/Mini_cooper.jpg"
+    },
+    {
+      "model": "G30",
+      "image": "img/G30.jpg"
+    },
+    {
+      "model": "M3",
+      "image": "img/M3.jpg"
+    }
+  ]
+}

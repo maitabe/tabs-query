@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>jQuery project</title>
+
+
+    <!-- calendar css -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav>
+      <div class="container top">
+        <div class="navBar">
+          <a class="navBar-brand" href="">project series</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container pushDown ">Explore each one of the exercises.
+      <div class="center">
+        <ul class="nav-tabs">
+          <li data-tab="tab-1">Exercise 1
+            <!-- <a href="">Exercise 1</a> -->
+          </li>
+          <li data-tab="tab-2">Exercise 2
+            <!-- <a href="">Exercise 2</a> -->
+          </li>
+          <li data-tab="tab-3">Exercise 3
+            <!-- <a href="">Exercise 3</a> -->
+          </li>
+          <li data-tab="tab-4">Exercise 4
+            <!-- <a href="">Exercise 3</a> -->
+          </li>
+          <li data-tab="tab-5">Exercise 5
+            <!-- <a href="">Exercise 3</a> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="whitebox">
+      <div class="innerbox">
+        <!-- <h1 class="title">Explore each one of the exercises</h1> -->
+        <div id="tab-1" class="tab-content">
+          <h3>Write any word or phrase in the input space to return the same text</h3>
+          <input id="tab1-in" type="text" name="Result">
+          <button id="result1">Press me</button>
+          <div id="addresult1"></div>
+        </div>
+        <div id="tab-2" class="tab-content">
+          <h3>Write a series of integers, the output should be<br /> the series of integers raised to the power of 2</h3>
+          <p>example, input: 1,2,3,4 </br /> output: 1,4,9,16</p>
+          <input id="tab2-in" type="" name="">
+          <button id="result2" >power of 2</button>
+          <div id="addresult2"></div>
+        </div>
+        <div id="tab-3" class="tab-content">
+          <h3>Get the length of the hypotenuse of a right angle triangle. <br /> the answer will round to the nearest integer value.</h3>
+          <form>
+          <label>Side a</label>
+          <input type="number" name="a" placeholder="side a"><br />
+          <label>Side b</label>
+          <input type="number" name="b" placeholder="side b"><br />
+          <label>Side c</label>
+          <input type="button" name="c" value=" side c ?"><br />
+          </form>
+          <div id="addresult3"></div>
+        </div>
+        <div id="tab-4" class="tab-content">
+          <h3> Select your favorite car</h3>
+          <div id="addresult4"></div>
+          <select id="carsList">
+            <!-- <option id="manufactureCar" value="Car Manufacture">Car Manufacture</option> -->
+          </select>
+          <select id="modelList">
+          </select>
+          <section>
+            <div id="carTransmission"></div>
+            <div id="imageBox"><img id="imageCar" src=""></div>
+          </section>
+          <div id="transmText"></div>
+          <div id="featureText"></div>
+          <div id="carFeatures"></div>
+          <div id="calendar">
+            <p id="calendarFrom">From: <input type="text" id="datepickerFrom"></p>
+            <p id="calendarTo">To: <input type="text" id="datepickerTo"></p>
+          </div>
+          <button id="totalDays">Total days</button>
+          <div id="resultDays"></div>
+          <div id="totalMoney"></div>
+
+          <button id="buyMe">Buy</button>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <!-- <div class="modal-content">
+                <span class="close">×</span>
+                <p>Some text in the Modal..</p>
+              </div> -->
+
+            </div>
+          <button id="rentMe">Rent</button>
+          <div id="confirmPurchase"></div>
+        </div>
+        <div id="tab-5" class="tab-content">
+          <h3>Address book</h3>
+          <button id="getUsers">Get Users</button>
+
+          <div id="userList"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- calendar  -->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

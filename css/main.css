@@ -1,0 +1,274 @@
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: 200;
+    padding-bottom: 20px;
+    color: #777777;
+    background-color: #fcfcfc;
+    margin: 0;
+}
+
+/*clearfix:before,
+clearfix:after {
+	content: " ";
+    display: table;
+}*/
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	color: #fff;
+}
+
+nav {
+    background-color: #d9230f;
+    border-color: #a91b0c;
+    padding: 18px;
+}
+
+.container {
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*.top {
+	padding-left: 15px;
+    margin: 0 auto;
+}*/
+
+.navBar-brand {
+	color:#493D26;
+}
+
+.pushDown {
+    margin-top: 40px;
+}
+
+ul{
+	list-style-type: none;
+}
+
+.center {
+    margin-top: 30px;
+}
+
+.center ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.center li {
+    float: left;
+    padding: 5px 15px;
+}
+
+
+.nav-tabs {
+	border-bottom: 1px solid #dddddd;
+}
+
+.nav-tabs>li {
+	color:#91170a;
+	cursor: pointer;
+	/*border-bottom: 1px solid #dddddd;*/
+}
+
+.nav-tabs>li:hover{
+	background-color: #dddddd;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tabactive {
+	border: 1px solid #dddddd;
+	border-bottom-color: transparent;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
+}
+
+.title {
+	font-size: 35px;
+    text-align: center;
+    line-height: 200px;
+}
+
+.whitebox {
+	margin: 0 auto;
+	width: 97%;
+	height: 1000px;
+	border: 1px solid #cccccc;
+	background-color: #f5f5f5;
+	margin-top: 18px;
+}
+
+
+.innerbox {
+	width: 97%;
+	/*height: 500px;*/
+	margin: 0 auto;
+	margin-top: 30px;
+	/*background-color: #f5f5f5;*/
+}
+
+.tab-content{
+	display: none;
+}
+
+div.tab-content{
+	width: 80%;
+    margin: 0 auto;
+}
+
+.current {
+	display: block;
+}
+
+.tab-content>div{
+	margin-top: 20px;
+}
+
+input[type="number"], input[type="button"] {
+	margin-top: 15px;
+}
+
+select#carsList {
+    margin-top: 15px;
+}
+
+#tab-4 section {
+    width: 100%;
+    /*border: 1px solid green;*/
+    margin-top: 35px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+}
+
+div#carTransmission {
+   width: 40%;
+    order: 1;
+    flex: 0 1 auto;
+    align-self: auto;
+    min-width: 0;
+    min-height: auto;
+}
+
+div#imageBox {
+	width: 50%;
+	order: 2;
+    flex: 0 1 auto;
+    align-self: auto;
+    min-width: 0;
+    min-height: auto;
+}
+
+
+div#featureText {
+    margin: 0;
+}
+
+/*#carFeature label:hover:after {
+	content: 'only this';
+}*/
+
+label input#selectAll {
+    margin-bottom: 15px;
+}
+
+#carFeature span {
+	display: none;
+}
+
+label:hover + span {
+	display: block;
+}
+
+button {
+    margin-top: 20px;
+}
+/*calendar*/
+
+#calendar {
+    width: 100%;
+    /*border: 1px solid green;*/
+    margin-top: 35px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+}
+
+p#calendarFrom {
+   width: 40%;
+    order: 1;
+    flex: 0 1 auto;
+    align-self: auto;
+    min-width: 0;
+    min-height: auto;
+}
+
+p#calendarTo {
+	width: 50%;
+	order: 2;
+    flex: 0 1 auto;
+    align-self: auto;
+    min-width: 0;
+    min-height: auto;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.modal-content img {
+	width: 90%;
+    height: 192px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button#getUsers {
+
+}
