@@ -1,4 +1,4 @@
-//functions
+var cars;
 
 //ex1
 function copyMe(input) {
@@ -147,6 +147,11 @@ function selectAllItems() {
 
 $(document).ready(function() {
 
+
+	getCarsData(function(data) {
+		cars = data;
+	});
+
   	// event handlers
   	$('.nav-tabs>li').click(function(){
 		// $('h1.title').remove();
@@ -225,16 +230,9 @@ $(document).ready(function() {
   		// how to get the "key" of an object console.log(Object.keys(cars));
   		var mySelect = $('#carsList');
 
-  	// 	getUsers(function(data){
-			// 	for(var x in data){
-			// 	  	$('#userList').append('<div>'+ data[x].name+ '</div>');
-			// 	  }
-			// });
-		getCarsData(function(carsData) {
-	  		for (key in carsData) {
+	  		for (key in cars) {
 	  			mySelect.append('<option value="' + key + '">' + key + '</option>');
 	  		}
-		})
     });
 
 
