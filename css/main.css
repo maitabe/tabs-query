@@ -225,6 +225,10 @@ p#calendarTo {
     min-height: auto;
 }
 
+#dateFromError {
+    color: red;
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */

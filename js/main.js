@@ -147,7 +147,7 @@ function selectAllItems() {
 
 $(document).ready(function() {
 
-
+	// init code
 	getCarsData(function(data) {
 		cars = data;
 	});
@@ -230,6 +230,7 @@ $(document).ready(function() {
   		// how to get the "key" of an object console.log(Object.keys(cars));
   		var mySelect = $('#carsList');
 
+  			console.log(JSON.stringify(cars));
 	  		for (key in cars) {
 	  			mySelect.append('<option value="' + key + '">' + key + '</option>');
 	  		}
@@ -346,24 +347,36 @@ $(document).ready(function() {
 
 	  	});
 
+
 	  	//display how many days to rent a car
 	  	$('#totalDays').click(function() {
 	  		$('#resultDays').empty();
 	  		$('#totalMoney').empty();
 
-	  		var dateFrom,
+	  		var currentDay = new Date(),
+	  			dateFrom,
 	  			dateTo,
 	          	oneDay,
 	          	firstDate,
 	          	secondDate,
-	  			daysDiff
+	  			daysDiff;
 
-			  dateFrom = $('#datepickerFrom').val();
+	  			currentDay.setHours(0,0,0,0);
+
+			dateFrom = $('#datepickerFrom').val();
 	  		dateTo = $('#datepickerTo').val();
 	  		//get numbers of day to rent a car
 	  		oneDay = 24*60*60*1000;  // hours*minutes*seconds*milliseconds
 	  		firstDate = new Date(dateFrom);
 	  		secondDate = new Date(dateTo);
+
+	  		$('#dateFromError').html(" ");
+			  if(firstDate >= currentDay && firstDate <= secondDate){
+			  	//valid
+			  }else {
+			  	//not valid
+			  	$('#dateFromError').html("date is not valid");
+			  }
 
 	    		daysDiff = Math.abs((secondDate.getTime() - firstDate.getTime()) / (oneDay));
 
@@ -379,14 +392,14 @@ $(document).ready(function() {
 			  			};
 
 			  			getPrice(daysDiff, priceCar);
-		  })
+		  });
 
 
 	  	//event handler when BUYING a car
 	  	$('#buyMe').click(function() {
 	  		// $('#featureText').hide();
 	  		var manufactureSelected,
-	  			modelSelected
+	  			modelSelected;
 	  		// get checkbox selected
 
 	  		var featureSelectedArr = [];
@@ -431,13 +444,13 @@ $(document).ready(function() {
 
 	  		$('#confirmPurchase').append();
 
-	  	})
+	  	});
 
 	  	//event handler when RENTING a car
 	  	$('#rentMe').click(function() {
 
 	  		var manufactureSelected,
-	  			modelSelected
+	  			modelSelected;
 	  		// get checkbox selected
 	  		var featureSelectedArr = [];
 	  		$("#carFeatures input:checked").each(function(index, elm) {
@@ -476,7 +489,7 @@ $(document).ready(function() {
 	  		  }
 	  		);
 
-	  	})
+	  	});
 
 
 	  			// 	for (key in cars) {
@@ -505,13 +518,12 @@ $(document).ready(function() {
 				  	$('#userList').append('<div>'+ data[x].name+ '</div>');
 				  }
 			});
-		})
+		});
 
 	});
 
 	// init code
 	$('.nav-tabs>li[data-tab="tab-1"]').click();
-
 
 });
 
