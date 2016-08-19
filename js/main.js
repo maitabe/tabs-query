@@ -1,6 +1,5 @@
 //global variables
-var
-	carService;
+var carService;
 
 //ex1
 function copyMe(input) {
@@ -192,7 +191,6 @@ $(document).ready(function() {
 			$('#carsList').empty();
 		 	$('#carsList').append('<option id="manufactureCar" value="Car Manufacture">Car Manufacture</option>');
 
-
 			// init select elm
 			// how to get the "key" of an object console.log(Object.keys(cars));
 			var mySelect = $('#carsList');
@@ -200,7 +198,6 @@ $(document).ready(function() {
   			for (key in carService.cars) {
 					mySelect.append('<option value="' + key + '">' + key + '</option>');
 				}
-
   		});
 
     });
@@ -232,15 +229,12 @@ $(document).ready(function() {
 	  	 	}
 
 	  	 	// adding models dropdown
-	  	 	if (carManufModels !== undefined) {
-						$('#modelList').append('<option value="' + carManufModels[i].model + '">' + carManufModels[i].model + '</option>');
-		  	 	}
-
+	  	 	for (var i = 0; i < carManufModels.length; i++) {
+				$('#modelList').append('<option value="' + carManufModels[i].model + '">' + carManufModels[i].model + '</option>');
+	  	 	}
 	  	});
 
 	  	$('select#modelList').change(function() {
-
-
 
 	  		$('#carFeatures').hide();
 	  	 	$('button').hide();
@@ -284,8 +278,8 @@ $(document).ready(function() {
 	  	$('#carTransmission').change(function() {
 
 	  		//get the value of the "transmission"
-	  		var transOption = $('input[type="radio"]:checked').val();
-	  		$('#transmText').text('you had selected ' + transOption + ' transmission');
+	  		var transmissionOption = $('input[type="radio"]:checked').val();
+	  		$('#transmText').text('you had selected ' + transmissionOption + ' transmission');
 
 	  			$('#carFeatures').empty();
 		  		//get value of the "car manufacture"
