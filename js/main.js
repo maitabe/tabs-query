@@ -1,4 +1,6 @@
-var cars;
+//global variables
+var
+	carService;
 
 //ex1
 function copyMe(input) {
@@ -9,6 +11,7 @@ function copyMe(input) {
 
 	return output + ' Cooolllll!';
 }
+
 
 //ex2
 function poweroftwo(input) {
@@ -24,6 +27,7 @@ function poweroftwo(input) {
 		}
 		return output;
 }
+console.log('message');
 
 //ex3
 function findhypo(input){
@@ -52,12 +56,12 @@ function hideForm(){
 	// ($('#buyMe').hide();
 	// $('#rentMe').hide();)
 
-};
+}
 
-function getCarManufModels(){
-	var valueOption = $('#carsList :selected').attr('value');
- 	return cars[valueOption];
-};
+// function getCarManufModels(){
+// 	var valueOption = $('#carsList :selected').attr('value');
+//  	return cars[valueOption];
+// }
 
 function selectAllItems() {
 
@@ -81,16 +85,10 @@ function selectAllItems() {
   			$('#selectAll').prop('checked', false);
   		}
   	});
-};
+}
 
 	//
-	function getCarsData(callback) {
-		$.get('http://localhost:3000/db',function(carsDataFromServer, status) {
-			console.log(carsDataFromServer);
-			//if(status !== 200) return;
-			callback(carsDataFromServer);
-		});
-	 }
+
 
 
 	// a sync function , return users list
@@ -102,43 +100,6 @@ function selectAllItems() {
 		});
 	 }
 
-
-//ex4
-	// var cars = {
- //  			'Suzuki': [
-	// 			 {model: 'Jimny',
-	// 			 image: 'img/Jimny_Phoenix_Red.png'},
-	// 			 {model: 'SX4 S-cross',
-	// 			 image: 'img/SX4_S-cross.jpg'},
-	// 			 {model: 'Vitara',
-	// 			 image: 'img/Vitara.jpg'}
- //  			  ],
- //  			'Mazda' : [
-	//   			 {model: 'Active 3',
-	//   			 image: 'img/Active3.jpg'},
-	//   			 {model: 'CX3',
-	//   			 image: 'img/CX3.jpg'},
-	//   			 {model: 'MX-5',
-	//   			 image:'img/MX-5.jpg'}
- //  			 ],
- //  			'Hyundai': [
- //  				 {model: 'Accent',
-	//   			 image: 'img/Accent.jpg'},
-	//   			 {model: 'Tucson',
-	//   			 image: 'img/Tucson.jpg'},
-	//   			 {model: 'i20',
-	//   			 image: 'img/i20.jpg'}
-	//   		 ],
- //  			'BMW': [
- //  				 {model: 'Mini cooper',
-	//   			 image: 'img/Mini_cooper.jpg'},
-	//   			 {model: 'G30',
-	//   			 image: 'img/G30.jpg'},
-	//   			 {model: 'M3',
-	//   			 image: 'img/M3.jpg'}
- //  			 ]
- //  		};
-
   	var features = ['stereo', 'AC', 'sun roof', 'GPS'];
 
   	var transmission = ['manual', 'automatic'];
@@ -148,9 +109,8 @@ function selectAllItems() {
 $(document).ready(function() {
 
 	// init code
-	getCarsData(function(data) {
-		cars = data;
-	});
+
+
 
   	// event handlers
   	$('.nav-tabs>li').click(function(){
@@ -218,22 +178,31 @@ $(document).ready(function() {
   		$('#addresult3').text(sideTrgle);
   	});
 
+
   	//ex4
   	$('.nav-tabs>li:nth-child(4)').click(function() {
-  		//clean the tab when clicking again
-  		hideForm();
-  		$('#carsList').empty();
-  	 	$('#carsList').append('<option id="manufactureCar" value="Car Manufacture">Car Manufacture</option>');
+
+  		carService = new CarService();
+
+  		carService.getCars(function() {
+
+  			// do stuff here
+			//clean the tab when clicking again
+			hideForm();
+			$('#carsList').empty();
+		 	$('#carsList').append('<option id="manufactureCar" value="Car Manufacture">Car Manufacture</option>');
 
 
-  		// init select elm
-  		// how to get the "key" of an object console.log(Object.keys(cars));
-  		var mySelect = $('#carsList');
+			// init select elm
+			// how to get the "key" of an object console.log(Object.keys(cars));
+			var mySelect = $('#carsList');
 
-  			console.log(JSON.stringify(cars));
-	  		for (key in cars) {
-	  			mySelect.append('<option value="' + key + '">' + key + '</option>');
-	  		}
+  			for (key in carService.cars) {
+					mySelect.append('<option value="' + key + '">' + key + '</option>');
+				}
+
+  		});
+
     });
 
 
@@ -249,9 +218,11 @@ $(document).ready(function() {
 	  	 	$('button').hide();
 	  	 	$('#imageCar').hide();
 
-
 	  	 	// get car models
-	  	 	var carManufModels = getCarManufModels();
+			var valueOption = $('#carsList :selected').attr('value');
+			var carManufModels = carService.getModels(valueOption);
+
+	  	 	// var carManufModels = getCarManufModels();
 
 			// if default hide model dropdown
 	  	 	if(carManufModels === undefined) {
@@ -262,20 +233,22 @@ $(document).ready(function() {
 
 	  	 	// adding models dropdown
 	  	 	if (carManufModels !== undefined) {
-		  	 	for (var i =0; i < carManufModels.length; i++){
-		  	 		$('#modelList').append('<option value="' + carManufModels[i].model + '">' + carManufModels[i].model + '</option>');
+						$('#modelList').append('<option value="' + carManufModels[i].model + '">' + carManufModels[i].model + '</option>');
 		  	 	}
-		  	 }
+
 	  	});
 
 	  	$('select#modelList').change(function() {
+
+
 
 	  		$('#carFeatures').hide();
 	  	 	$('button').hide();
 	  	 	$('#calendar').hide();
 
-	  		// get car models manufacture
-	  	 	var carManufModels = getCarManufModels();
+	  		// get car models from each manufacture
+  			var valueOption = $('#carsList :selected').attr('value');
+	  	 	var carManufModels = carService.getModels(valueOption);
 
 		  	//get value of the "car model"
 		  	var valueOptionModel = $('#modelList :selected').attr('value');
@@ -492,22 +465,6 @@ $(document).ready(function() {
 	  	});
 
 
-	  			// 	for (key in cars) {
-	  			//  	var value = cars[key];
-	  			//  	console.log(value);
-	  			//  		for(var i = 0; i < value.length; i++) {
-	  			//  			value[i];
-	  			//  			console.log(value[i]);
-	  			//  			$('#modelList').append('<p>' + value[i] + '</p>');
-	  			//  		}
-	  			//  	console.log(value[0]);
-
-	  			//  	$('#modelList').append('<p>' + value + '</p>');
-
-	  			//  	}
-
-	  			// });
-
 	//ex5
 	$('.nav-tabs>li:nth-child(5)').click(function() {
 
@@ -523,10 +480,7 @@ $(document).ready(function() {
 	});
 
 	// init code
-	$('.nav-tabs>li[data-tab="tab-1"]').click();
+	$('.nav-tabs>li[data-tab="tab-4"]').click();
 
 });
 
-//function getUsers() {
-
-// }

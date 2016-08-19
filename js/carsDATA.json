@@ -2,57 +2,69 @@
   "Suzuki": [
     {
       "model": "Jimny",
-      "image": "img/Jimny_Phoenix_Red.png"
+      "image": "img/Jimny_Phoenix_Red.png",
+      "available": true
     },
     {
       "model": "SX4 S-cross",
-      "image": "img/SX4_S-cross.jpg"
+      "image": "img/SX4_S-cross.jpg",
+      "available": true
     },
     {
       "model": "Vitara",
-      "image": "img/Vitara.jpg"
+      "image": "img/Vitara.jpg",
+      "available": true
     }
   ],
   "Mazda": [
     {
       "model": "Active 3",
-      "image": "img/Active3.jpg"
+      "image": "img/Active3.jpg",
+      "available": true
     },
     {
       "model": "CX3",
-      "image": "img/CX3.jpg"
+      "image": "img/CX3.jpg",
+      "available": true
     },
     {
       "model": "MX-5",
-      "image": "img/MX-5.jpg"
+      "image": "img/MX-5.jpg",
+      "available": true
     }
   ],
   "Hyundai": [
     {
       "model": "Accent",
-      "image": "img/Accent.jpg"
+      "image": "img/Accent.jpg",
+      "available": true
     },
     {
       "model": "Tucson",
-      "image": "img/Tucson.jpg"
+      "image": "img/Tucson.jpg",
+      "available": true
     },
     {
       "model": "i20",
-      "image": "img/i20.jpg"
+      "image": "img/i20.jpg",
+      "available": false
     }
   ],
   "BMW": [
     {
       "model": "Mini cooper",
-      "image": "img/Mini_cooper.jpg"
+      "image": "img/Mini_cooper.jpg",
+      "available": true
     },
     {
       "model": "G30",
-      "image": "img/G30.jpg"
+      "image": "img/G30.jpg",
+      "available": true
     },
     {
       "model": "M3",
-      "image": "img/M3.jpg"
+      "image": "img/M3.jpg",
+      "available": true
     }
   ]
 }
