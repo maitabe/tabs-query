@@ -1,5 +1,6 @@
 //global variables
-var carService;
+var carService,
+	customerOrder;
 
 //ex1
 function copyMe(input) {
@@ -57,11 +58,6 @@ function hideForm(){
 
 }
 
-// function getCarManufModels(){
-// 	var valueOption = $('#carsList :selected').attr('value');
-//  	return cars[valueOption];
-// }
-
 function selectAllItems() {
 
 		//select all checkbox features
@@ -86,12 +82,8 @@ function selectAllItems() {
   	});
 }
 
-	//
-
-
-
 	// a sync function , return users list
-	function getUsers(callback) {
+function getUsers(callback) {
 		var root = 'http://jsonplaceholder.typicode.com';
 		$.get(root + '/users',function(dataFromServer, status) {
 			//if(status !== 200) return;
@@ -99,10 +91,9 @@ function selectAllItems() {
 		});
 	 }
 
-  	var features = ['stereo', 'AC', 'sun roof', 'GPS'];
+var features = ['stereo', 'AC', 'sun roof', 'GPS'];
 
-  	var transmission = ['manual', 'automatic'];
-
+var transmission = ['manual', 'automatic'];
 
 
 $(document).ready(function() {
